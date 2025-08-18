@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { AboutPageAsync } from "./pages/AboutPage/AboutPageAsync";
 import { ThemeContext } from "./theme/ThemeContext";
 import { useTheme } from "./theme/useTheme";
+import { classNames } from "./helpers/classnames/classNames";
 
 export enum Theme {
   LIGHT = 'light',
@@ -14,9 +15,9 @@ export enum Theme {
 
 const App = () => {
   const {theme, toggleTheme} = useTheme()
-
+  const bool = true;
   return (
-    <div className={`app ${theme}`}>
+    <div className={classNames('app',{}, [theme])}>
       <Link to={'/about'}>about</Link>
       <Link to={'/'}>main</Link>
       <button onClick={toggleTheme}>Toggle Theme</button>
