@@ -1,10 +1,10 @@
 import path from "path"
-import { buildLoaders } from "../buildLoadres"
-import { buildPlugins } from "../buildPlugins"
-import { buildResolvers } from "../buildResolvers"
-import { BuildOptions } from "./config"
+import { buildLoaders } from "./buildLoadres"
+import { buildPlugins } from "./buildPlugins"
+import { buildResolvers } from "./buildResolvers"
+import { BuildOptions } from "./types/config"
 import webpack from "webpack"
-import { buildDevServer } from "../buildDevServer"
+import { buildDevServer } from "./buildDevServer"
 
 
 export function buildWebpackConfig(options: BuildOptions): webpack.Configuration {
