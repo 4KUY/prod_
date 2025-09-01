@@ -19,3 +19,4 @@ declare module '*jpeg' {
     const JPEG: React.FC<React.ImgHTMLAttributes<HTMLImageElement>>;
     export default JPEG;
 }
+declare const __IS_DEV__: boolean;
