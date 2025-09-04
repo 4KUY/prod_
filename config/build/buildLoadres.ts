@@ -28,20 +28,20 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[]{
                 options: {
                     modules: {
                         auto: (resPath: string) => {
-                        return Boolean(resPath.includes('.module.'));
-                    },
-                    localIdentName: options.isDev ? '[path][name]__[local]' : '[hash:base64:8]'
+                            return Boolean(resPath.includes('.module.'));
+                        },
+                        localIdentName: options.isDev ? '[path][name]__[local]' : '[hash:base64:8]'
                     },
                     
                 },
             },
-             'sass-loader'
-            ],
+            'sass-loader'
+        ],
     }
     return [
-            typeScriptLoader,
-            svgLoader,
-            fileLoader,
-            cssLoader
-        ]
+        typeScriptLoader,
+        svgLoader,
+        fileLoader,
+        cssLoader
+    ]
 }
