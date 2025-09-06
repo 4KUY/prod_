@@ -5,18 +5,19 @@
     position: relative;
     transition: width 0.3s ease;
 }
-.collapsed{
+
+.collapsed {
     width: var(--sidebar-collapsed-width);
 }
 
-
-.switchers{
+.switchers {
     position: absolute;
     bottom: 20px;
     display: flex;
     justify-content: center;
     width: 100%;
 }
-.lang{
+
+.lang {
     margin-left: 20px;
 }
