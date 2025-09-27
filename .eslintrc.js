@@ -2,7 +2,8 @@ module.exports = {
     env: {
         browser: true,
         es2021: true,
-        node: true
+        node: true,
+        jest:true
     },
     extends: [
         "eslint:recommended",
@@ -26,6 +27,7 @@ module.exports = {
         indent: [2, 4],
         'react/jsx-indent-props': [2, 4],
         'react/jsx-props-no-spreading': 'warn',
-        'i18next/no-literal-string': ['error', { markupOnly: true }]
+        'i18next/no-literal-string': ['error', { markupOnly: true }],
+        'max-len':['warn', {"ignoreComments":true}]
     }
 };

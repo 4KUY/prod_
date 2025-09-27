@@ -11,10 +11,11 @@ export const LangSwitcher = ({ className }: LangSwitcherProps) => {
         <Button
             className={classNames(cls.LangSwitcher, {} , [className])}
             theme={ThemeButton.CLEAR}
-            onClick={() => i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru')}
+            onClick={() => 
+                i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru')}
         >
             {t('Язык')}
-
+            
         </Button>
     )
 }
