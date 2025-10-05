@@ -7,19 +7,23 @@
     "jsx": "react-jsx",
     "allowJs": true,
     "moduleResolution": "node",
-    "baseUrl": ".",
+    
+    "baseUrl": "./src", 
     "paths": {
-      "*": ["./src/*"]
+      "shared/*": ["shared/*"],
+      "app/*": ["app/*"],
+      "entities/*": ["entities/*"],
+      "features/*": ["features/*"],
+      "pages/*": ["pages/*"],
+      "widgets/*": ["widgets/*"]
     },
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    
+    "types": ["node", "jest", "@testing-library/jest-dom"],
     "skipLibCheck": true
   },
-  "ts-node": {
-    "compilerOptions": {
-      "module": "CommonJS"
-    }
-  }
-  
+  "include": [
+    "src", 
+    "config/jest/setupTests.ts"
+  ]
 }

@@ -3,6 +3,8 @@
  * https://jestjs.io/docs/configuration
  */
 
+import path from 'path';
+
 export default {
     // All imported modules in your tests should be mocked automatically
     // automock: false,
@@ -19,6 +21,33 @@ export default {
     coveragePathIgnorePatterns: [
         "\\\\node_modules\\\\"
     ],
+    moduleDirectories: [
+        "node_modules"
+    ],
+
+    // An array of file extensions your modules use
+    moduleFileExtensions: [
+        "js",
+        "jsx",
+        "ts",
+        "tsx",
+        "json",
+        "node"
+    ],
+    modulePaths: [
+        '<rootDir>src',
+    ]
+    ,
+    testMatch: [
+        '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
+    ],
+    rootDir: "../../",
+    setupFilesAfterEnv: ['<rootDir>/config/jest/setupTests.ts'],
+    
+    moduleNameMapper: {
+        '\\.(s?css)$': 'identity-obj-proxy',
+        '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx')
+    },
     // Indicates whether the coverage information should be collected while executing the test
     // collectCoverage: false,
 
@@ -67,23 +96,7 @@ export default {
     // maxWorkers: "50%",
 
     // An array of directory names to be searched recursively up from the requiring module's location
-    moduleDirectories: [
-        "node_modules"
-    ],
-
-    // An array of file extensions your modules use
-    moduleFileExtensions: [
-        "js",
-        "jsx",
-        "ts",
-        "tsx",
-        "json",
-        "node"
-    ],
-    testMatch: [
-        '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
-    ],
-    rootDir: "../../",
+    
     // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
     // moduleNameMapper: {},
 

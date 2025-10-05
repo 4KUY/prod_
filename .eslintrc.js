@@ -27,7 +27,14 @@ module.exports = {
         indent: [2, 4],
         'react/jsx-indent-props': [2, 4],
         'react/jsx-props-no-spreading': 'warn',
-        'i18next/no-literal-string': ['error', { markupOnly: true }],
-        'max-len':['warn', {"ignoreComments":true}]
-    }
+        'i18next/no-literal-string': ['error', 
+            { markupOnly: true, ignoreAttribute: ['data-testid'] }],
+        'max-len':['warn', {"ignoreComments":true, code: 100}]
+    },
+    overrides: [
+        {
+            files:['**/src/**/*.test.{ts,tsx}'],
+            rules: { 'i18next/no-literal-string': 'off' }
+        }
+    ]
 };
