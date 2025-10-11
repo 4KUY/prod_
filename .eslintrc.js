@@ -9,7 +9,8 @@ module.exports = {
         "eslint:recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:react/recommended",
-        "plugin:i18next/recommended"
+        "plugin:i18next/recommended",
+        "plugin:storybook/recommended"
     ],
     parser: "@typescript-eslint/parser",
     parserOptions: {
@@ -28,7 +29,7 @@ module.exports = {
         'react/jsx-indent-props': [2, 4],
         'react/jsx-props-no-spreading': 'warn',
         'i18next/no-literal-string': ['error', 
-            { markupOnly: true, ignoreAttribute: ['data-testid'] }],
+            { markupOnly: true, ignoreAttribute: ['data-testid', 'to'] }],
         'max-len':['warn', {"ignoreComments":true, code: 100}]
     },
     overrides: [
