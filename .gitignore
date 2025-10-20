@@ -1,4 +1,6 @@
 /node_modules
 /build  
 *storybook.log
-storybook-static
+/storybook-static
+!/storybook-static/index.json
+/test-results
