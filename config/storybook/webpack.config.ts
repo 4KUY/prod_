@@ -1,4 +1,4 @@
-import webpack, { RuleSetRule } from "webpack"
+import webpack, {} from "webpack"
 import path from "path"
 import { BuildPaths } from "../build/types/config";
 import { buildCssLoader } from "../build/loaders/buildCssLoader";
@@ -21,13 +21,13 @@ export default ({config}: {config: webpack.Configuration}) => {
     config.module ??= {};
     config.module.rules ??= [];
     config.module.rules = (config.module?.rules ?? [])
-    .filter((rule): rule is webpack.RuleSetRule => !!rule) 
-    .map(rule => {
-    if (rule.test && /svg/.test(rule.test.toString())) {
-      return { ...rule, exclude: /\.svg$/ };
-    }
-    return rule;
-    });
+        .filter((rule): rule is webpack.RuleSetRule => !!rule) 
+        .map(rule => {
+            if (rule.test && /svg/.test(rule.test.toString())) {
+                return { ...rule, exclude: /\.svg$/ };
+            }
+            return rule;
+        });
     config.module.rules.push({
         test: /\.svg$/,
         use: ['@svgr/webpack']
