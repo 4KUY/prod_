@@ -1,4 +1,4 @@
-name: linting, testing, building
+name: linting, testing, building, UI
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on:
   push:
@@ -29,3 +29,20 @@ jobs:
         run: npm run lint:scss
       - name: unit test
         run: npm run test:unit
+      - name: Build Storybook
+        run: npm run build-storybook
+
+      - name: Start Storybook server
+        run: npx http-server storybook-static --port 6006 &
+        env:
+          NODE_ENV: test
+      - name: Wait for Storybook to start
+        run: npx wait-on http://localhost:6006
+      - name: Run visual tests
+        run: npx playwright test
+      - name: Upload visual test report if failed
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: playwright-report/
