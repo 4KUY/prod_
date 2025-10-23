@@ -15,7 +15,8 @@
     "storybook": "storybook dev -p 6006 -c ./config/storybook",
     "sb:json": "storybook dev -p 6006 --quiet --output-json",
     "build-storybook": "storybook build -c ./config/storybook",
-    "test:visual": "start-server-and-test 'storybook dev -p 6006 -c ./config/storybook' http://localhost:6006 'playwright test'"
+    "test:visual": "start-server-and-test 'storybook dev -p 6006 -c ./config/storybook' http://localhost:6006 'playwright test'",
+    "test:visual:update": "npx playwright test --update-snapshots"
   },
   "keywords": [],
   "author": "",
