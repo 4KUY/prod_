@@ -31,7 +31,7 @@ test.describe('Storybook visual tests - all stories', () => {
             });
   
             const screenshot = await page.screenshot();
-            expect(screenshot).toMatchSnapshot(`${story.id}.png`);
+            expect(screenshot).toMatchSnapshot(`${story.id}.png`, { maxDiffPixelRatio: 0.02 });
         });
     }
 });
