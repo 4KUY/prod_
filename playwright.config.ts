@@ -2,6 +2,7 @@ import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
     testDir: './config/playwright',
+    snapshotPathTemplate: '{testDir}/{testFileName}-snapshots/{arg}{ext}',
     timeout: 60000,
     expect: {
         toHaveScreenshot: { maxDiffPixelRatio: 0.05 },
