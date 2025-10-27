@@ -5,6 +5,7 @@
     position: relative;
     transition: width 0.3s ease;
 }
+
 .switchers {
     position: absolute;
     bottom: 20px;
@@ -12,19 +13,24 @@
     justify-content: center;
     width: 100%;
 }
+
 .lang {
     margin-left: 10px;
 }
+
 .collapsed {
     width: var(--sidebar-collapsed-width);
-    .switchers{
+
+    .switchers {
         flex-direction: column;
         align-items: center;
     }
+
     .lang {
         margin-left: 0;
     }
 }
+
 .collapseBtn {
     position: absolute;
     right: -32px;
