@@ -21,7 +21,7 @@ module.exports = {
         ecmaVersion: "latest",
         sourceType: "module"
     },
-    plugins: ["@typescript-eslint", "react", "i18next"],
+    plugins: ["@typescript-eslint", "react", "i18next", "eslint-plugin-react-hooks"],
     settings: {
         react: {
             version: "detect" 
@@ -36,12 +36,14 @@ module.exports = {
         'react/jsx-props-no-spreading': 'warn',
         'i18next/no-literal-string': ['error', 
             { markupOnly: true, ignoreAttribute: ['data-testid', 'to'] }],
-        'max-len':['warn', {"ignoreComments":true, code: 100}]
+        'max-len':['warn', {"ignoreComments":true, code: 100}],
+        'react-hooks/rules-of-hooks': "error",
+        'react-hooks/exhaustive-deps': 'warn'
     },
     overrides: [
         {
-            files:['**/src/**/*.test.{ts,tsx}'],
-            rules: { 'i18next/no-literal-string': 'off' }
+            files:['**/src/**/*.{test,stories}.{ts,tsx}'],
+            rules: { 'i18next/no-literal-string': 'off', 'max-len': 'off'}
         }
     ]
 };
