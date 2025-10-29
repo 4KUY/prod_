@@ -5,6 +5,8 @@ module.exports = {
     rules: {
         "at-rule-no-unknown": null,
         "selector-class-pattern": null,
-        "indentation": [4]
+        "indentation": [4],
+        "no-duplicate-selectors": true,
+        "scss/no-duplicate-dollar-variables": true,
     }
 };
