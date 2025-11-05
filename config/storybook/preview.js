@@ -4,16 +4,16 @@ import { ThemeDecorator } from '../../src/shared/config/storybook/ThemeDecorator
 import { RouteDecorator } from '../../src/shared/config/storybook/RouteDecorator/RouteDecorator';
 import {Theme} from '../../src/app/providers/index'
 const preview = {
-  parameters: {
-    controls: {
-      matchers: {
-        color: /(background|color)$/i,
-        date: /Date$/i,
-      },
+    parameters: {
+        controls: {
+            matchers: {
+                color: /(background|color)$/i,
+                date: /Date$/i,
+            },
+        },
     },
-  },
 
-  decorators: [StyleDecorator(Theme.LIGHT), RouteDecorator()],
+    decorators: [StyleDecorator(Theme.LIGHT), RouteDecorator()],
 };
 
 export default preview;
